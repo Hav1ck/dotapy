@@ -1,4 +1,4 @@
-import json
+from json import dump
 
 def save_defaults():
     # Saves default global settings to 'globals.json'.
@@ -11,4 +11,4 @@ def save_defaults():
     }
     
     with open('globals.json', 'w') as file:
-        json.dump(global_data, file, indent=4)
+        dump(global_data, file, indent=4)

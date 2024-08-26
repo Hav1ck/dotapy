@@ -1,19 +1,18 @@
-# gui.py
 import customtkinter
 from PIL import Image
-import threading
-import time
+from threading import Thread
+from time import sleep
 from utils import load_globals, save_globals
 from tkinter import TclError
 
 def launch_app(path, before):
     # Start a separate thread to launch the app with a delay
-    timer_thread = threading.Thread(target=launch_app2, args=(path, before,))
+    timer_thread = Thread(target=launch_app2, args=(path, before))
     timer_thread.start()
 
 def launch_app2(path, before):
     # Wait for 2 seconds before launching the GUI
-    time.sleep(2)
+    sleep(2)
     globals = load_globals()
     globals['stop_gui'] = 0
     save_globals(globals)

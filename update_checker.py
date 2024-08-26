@@ -1,4 +1,4 @@
-import requests
+from requests import get
 
 GITHUB_REPO = "Hav1ck/timing_checker"  # Define the repository and current version
 CURRENT_VERSION = "v1.0.0"  # Current version of the application
@@ -7,7 +7,7 @@ def get_latest_release():
     # Fetches the latest release tag from the GitHub repository.
     # Returns the tag name of the latest release or None if the request fails.
     url = f"https://api.github.com/repos/{GITHUB_REPO}/releases/latest"
-    response = requests.get(url)
+    response = get(url)
     
     if response.status_code == 200:
         latest_release = response.json()

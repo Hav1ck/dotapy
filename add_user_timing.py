@@ -1,4 +1,4 @@
-from add_timing import add_timing as add_timing
+from add_timing import add_timing
 
 def add_user_timing():
     # Prompts the user to enter a new timing and attempts to add it.

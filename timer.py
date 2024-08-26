@@ -1,8 +1,6 @@
-import time
-import threading
-from add_user_timing import add_user_timing as add_user_timing
-from add_timing import add_timing as add_timing
-from gui import launch_app as launch_app
+from time import sleep
+from threading import Thread
+from gui import launch_app
 from utils import load_globals, save_globals, load_timings
 
 timings = []
@@ -34,7 +32,7 @@ def run_timer():
         globals['stop_timer'] = 1
         globals['running'] = 0
         save_globals(globals)
-        time.sleep(1)
+        sleep(1)
         globals['stop_timer'] = 0
         globals['running'] = 0
         save_globals(globals)
@@ -85,14 +83,14 @@ def run_timer():
                             launch_app(path, before)
 
         # Increment the timer every second
-        time.sleep(1)
+        sleep(1)
         globals = load_globals()
         globals['timer'] += 1
         save_globals(globals)
 
 def start_run_timer():
     # Start the timer in a separate thread
-    timer_thread = threading.Thread(target=run_timer)
+    timer_thread = Thread(target=run_timer)
     timer_thread.start()
 
 def count_priority(repeat, event_time):

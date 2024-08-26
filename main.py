@@ -1,4 +1,4 @@
-import keyboard
+from keyboard import wait, add_hotkey
 from add_user_timing import add_user_timing
 from add_timing import add_timing
 from timer import start_run_timer, subtract_x, add_x
@@ -23,14 +23,14 @@ if __name__ == "__main__":
     add_timing("neutralt5", 60, 30, False, "assets\\neutral.png")
 
     # Bind hotkeys for adding user timings and controlling the timer
-    keyboard.add_hotkey('F7', add_user_timing)
-    keyboard.add_hotkey('F8', start_run_timer)
-    keyboard.add_hotkey('alt+F7', subtract_x, args=(1,))
-    keyboard.add_hotkey('alt+F8', add_x, args=(1,))
-    keyboard.add_hotkey('ctrl+alt+F7', subtract_x, args=(60,))
-    keyboard.add_hotkey('ctrl+alt+F8', add_x, args=(60,))
-    keyboard.add_hotkey('ctrl+F7', subtract_x, args=(10,))
-    keyboard.add_hotkey('ctrl+F8', add_x, args=(10,))
+    add_hotkey('F7', add_user_timing)
+    add_hotkey('F8', start_run_timer)
+    add_hotkey('alt+F7', subtract_x, args=(1,))
+    add_hotkey('alt+F8', add_x, args=(1,))
+    add_hotkey('ctrl+alt+F7', subtract_x, args=(60,))
+    add_hotkey('ctrl+alt+F8', add_x, args=(60,))
+    add_hotkey('ctrl+F7', subtract_x, args=(10,))
+    add_hotkey('ctrl+F8', add_x, args=(10,))
 
     # Wait for the 'esc' key to exit the script
-    keyboard.wait('esc')
+    wait('esc')
