@@ -1,0 +1,75 @@
+# timing checker
+
+### Python Timer with GUI and Hotkey Integration
+
+## Project Description
+
+This project is a Python-based timer application with customizable events and visual notifications. It allows users to set up timings for different events and manage them via keyboard hotkeys. A simple GUI is displayed when events are about to occur. This project supports scheduling recurring events with defined time intervals and priorities. It is integrated with `keyboard` for hotkey support and `customtkinter` for GUI rendering.
+
+## Features
+
+- **Custom Timer Events**: Define events with a name, time, image, and repetition.
+- **Hotkey Controls**: Control the timer and events using predefined keyboard shortcuts.
+- **Dynamic GUI Notifications**: Launch a notification GUI before an event occurs with visual and timing information.
+- **Event Scheduling**: Schedule recurring or one-time events.
+- **JSON-based Storage**: Save and load event timings and global settings from JSON files.
+
+## Installation
+
+### Requirements
+
+- Python 3.x
+- Required packages:
+  - `keyboard`
+  - `customtkinter`
+  - `Pillow` (for image handling)
+  
+To install the necessary packages, run:
+
+```bash
+pip install keyboard customtkinter Pillow
+```
+
+## Usage
+
+1. Clone the repository or download the project files.
+2. To run the project, execute the `main.py` script:
+
+```bash
+python main.py
+```
+
+### Predefined Hotkeys
+
+- **F7**: Add a new user-defined event.
+- **F8**: Start the run timer.
+- **Alt + F7**: Subtract 1 second from the timer.
+- **Alt + F8**: Add 1 second to the timer.
+- **Ctrl + Alt + F7**: Subtract 60 seconds from the timer.
+- **Ctrl + Alt + F8**: Add 60 seconds to the timer.
+- **Ctrl + F7**: Subtract 10 seconds from the timer.
+- **Ctrl + F8**: Add 10 seconds to the timer.
+- **ESC**: Terminate the program.
+
+### Customizing Events
+
+You can add timing events by calling the `add_timing()` function programmatically or by pressing **F7** and entering the event details in the required format.
+
+Example event format:
+```bash
+"name, time (minutes), before (seconds), repeat (True/False), path_to_image"
+```
+
+## File Structure
+
+- `main.py`: The entry point of the application, responsible for initializing hotkeys and timings.
+- `timer.py`: Handles the main timer logic, including time formatting and GUI updates.
+- `gui.py`: Manages the creation of the custom GUI for displaying upcoming events.
+- `utils.py`: Includes helper functions for loading and saving JSON data.
+- `add_timing.py`: Contains logic to add and validate new timing events.
+- `globals.json`: Stores global states such as the timer, running status, etc.
+- `timings.json`: Stores the list of event timings.
+
+## License
+
+This project is open-source. Feel free to modify and use it according to your needs.
