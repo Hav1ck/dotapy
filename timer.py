@@ -62,7 +62,6 @@ def run_timer():
 
                 # Check if an event should occur based on the timer and priority
                 if priority < count_priority(repeat, event_time):
-                    print(f"pr = {priority}, < {count_priority(repeat, event_time)}")
                     if not repeat:
                         if overall_time == event_time - before:
                             globals['stop_gui'] = 1
